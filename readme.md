@@ -1,6 +1,6 @@
 # Wobble Board with 3D Printed Dome
 
-[](./images/inspiration.jpg)
+![](./images/inspiration.jpg)
 
 This wobble board is designed for easy fabrication at home, with an FDM printer and a jigsaw.
 
@@ -28,3 +28,13 @@ The highly unstable `wobble-dome.stl` might be fun for people who already have a
 5. Flip the board and center the dome on the bottom surface. Put one screw in loose, then recenter as much as possible, then put in the rest of the scews. Tighten all of them carefully.
 
 6. You're done! Try out your board on a soft surface. If you have enough material left over, consider making a wobble board for a friend :)
+
+## Development
+
+`./wobble-dome.scad` is a work in progress and is not at all paramtric, it needs lots of hacking to usefully customize the dome. If you want a parametric wobble dome generator, this is probably only usefull as an example.
+
+Tasks remaining for a true parametric wobble board generator:
+
+- Expose an interface for describing the dome using parameters that are relevant to the user: `dome_base_radius` determined by the build volume of the user's printer, `dome_height` determined by how far the board should be able to tip for a given board radius, and `dome_min_radius` to control the stability/instability of the board.
+- Scale the curve parameters of the sidewall parabolas based on the dome parameters.
+- Add a parameter `screw_height` to give the user a better opportunity to reuse their stashed hardware.
